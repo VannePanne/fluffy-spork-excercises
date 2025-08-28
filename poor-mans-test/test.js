@@ -11,4 +11,16 @@ describe("greet function", () => {
     // assert
     assert.equal('Welcome to SALT, Marcus', actualResult);
   });
+
+  it("should greet ELiza properly", () => {
+    // arrange
+    const greeter = require('./index.js');
+
+    // act
+    const actualResult = greeter.greet('Eliza');
+
+    // assert
+    assert.equal('Welcome to SALT, Eliza', actualResult);
+  });
+
 });
