@@ -31,7 +31,7 @@ describe("greet function", () => {
     const actualResult = greeter.greet('');
 
     // assert
-    assert.equal('Welcome to SALT, ', actualResult);
+    assert.equal('Error', actualResult);
   });
 
   it("should plural greeting for 'Eliza and Marcus'", () => {
@@ -39,7 +39,7 @@ describe("greet function", () => {
     const greeter = require('./index.js');
 
     // act
-    const actualResult = greeter.greet('Eliza and Marcus');
+    const actualResult = greeter.greet('Eliza', 'Marcus');
 
     // assert
     assert.equal('Welcome to SALT, Eliza and Marcus', actualResult);
