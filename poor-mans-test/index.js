@@ -1,6 +1,8 @@
 function greet(namePassedIn) {
-    return 'Welcome to SALT, ';
+    return 'Welcome to SALT, ' + namePassedIn;
   }
+
+module.exports.greet = greet;
 
   const greeting = greet('Marcus');
 if(greeting === 'Welcome to SALT, Marcus') {
@@ -9,3 +11,4 @@ if(greeting === 'Welcome to SALT, Marcus') {
 else {
   console.log('IT FAILS');
 }
+
