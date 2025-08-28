@@ -1,4 +1,8 @@
 function greet(namePassedIn) {
+    if (!namePassedIn) return "Error: No name provided"
+    if (Array.isArray(namePassedIn)){
+        return 'Welcome to Salt, ' + namePassedIn.join(' and ');
+    }
     return 'Welcome to SALT, ' + namePassedIn;
   }
 
