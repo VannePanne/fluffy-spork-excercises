@@ -39,7 +39,7 @@ describe("greet function", () => {
     const greeter = require('./index.js');
 
     // act
-    const actualResult = greeter.greet('Eliza', 'Marcus');
+    const actualResult = greeter.greet(['Eliza', 'Marcus']);
 
     // assert
     assert.equal('Welcome to SALT, Eliza and Marcus', actualResult);
