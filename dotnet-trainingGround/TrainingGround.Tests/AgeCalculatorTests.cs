@@ -8,6 +8,7 @@ public class AgeCalculatorTests
     {
         _calculator = new AgeCalculator();
     }
+    /*
     [Fact]
     public void someone_born_1972_is_50_in_2022()
     {
@@ -67,6 +68,16 @@ public class AgeCalculatorTests
 
         // assert
         Assert.Equal(30, age);
+    } */
+    [Theory]
+    [InlineData(1972, 2022, 50)]
+    [InlineData(1982, 2022, 40)]
+    [InlineData(1992, 2022, 30)]
+    [InlineData(2022, 2022, 0)]
+    public void person_age_is_correct(int birthYear, int currentYear, int expected)
+    {
+        var p = new Person(birthYear);
+        Assert.Equal(expected, p.GetAge(currentYear));
     }
    
 }
