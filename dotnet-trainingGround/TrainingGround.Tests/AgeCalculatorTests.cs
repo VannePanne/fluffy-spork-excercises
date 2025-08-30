@@ -2,13 +2,13 @@ namespace TrainingGround.Tests;
 
 public class AgeCalculatorTests
 {
-    private AgeCalculator _calculator;
+    /*private AgeCalculator _calculator;
 
     public AgeCalculatorTests()
     {
         _calculator = new AgeCalculator();
     }
-    /*
+    
     [Fact]
     public void someone_born_1972_is_50_in_2022()
     {
@@ -74,10 +74,13 @@ public class AgeCalculatorTests
     [InlineData(1982, 2022, 40)]
     [InlineData(1992, 2022, 30)]
     [InlineData(2022, 2022, 0)]
-    public void person_age_is_correct(int birthYear, int currentYear, int expected)
+    public void person_age_is_correct(int birthYear, int currentYear, int expectedAge)
     {
-        var p = new Person(birthYear);
-        Assert.Equal(expected, p.GetAge(currentYear));
+        // act
+        var age = AgeCalculator.GetAge(birthYear, currentYear);
+
+        // assert
+        Assert.Equal(expectedAge, age);
     }
    
 }

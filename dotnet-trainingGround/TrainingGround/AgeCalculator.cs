@@ -2,7 +2,7 @@
 
 public class AgeCalculator
 {
-    public int GetAge(int birthYear, int currentYear)
+    public static int GetAge(int birthYear, int currentYear)
     {
         return currentYear - birthYear;
     }
