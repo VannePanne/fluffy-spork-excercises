@@ -4,6 +4,6 @@ public class AgeCalculator
 {
     public int GetAge(int birthYear, int currentYear)
     {
-        return 0;
+        return currentYear - birthYear;
     }
 }
