@@ -2,22 +2,24 @@ namespace TrainingGround
 {
     public class Employee : Person, IPrintable
     {
-        public Employee() : base()
-        {
-        }
-        public Employee(string name, string employeeId) : base(name)
-        {
-            this.EmployeeId = employeeId;
-        }
+    public string EmployeeId { get; set; }
+    public List<Address> Addresses { get; set; }
 
-        public string EmployeeId { get; set; }
+    public Employee()
+    {
+        this.Addresses = new List<Address>();
+    }
+    public Employee(string name, string employeeId) : base(name)
+    {
+        this.Addresses = new List<Address>();
+        this.EmployeeId = employeeId;
+    }
 
-        public override string GetPrintString()
-{
-    return @$"{Name} ({EmployeeId})
-{Address.Street} {Address.StreetNo}
-{Address.City}";
-}
-
+    public string GetPrintString()
+    {
+        return @$"{this.Name} ({this.EmployeeId})
+{this.Address.Street} {this.Address.StreetNo}
+{this.Address.City}";
+    }
     }
 }
