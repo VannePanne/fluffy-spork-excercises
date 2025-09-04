@@ -25,14 +25,13 @@
             this.BirthYear = birthYear;
         }
 
-        public int GetAge(int currentYear)
+            public int GetAge(int currentYear)
         {
-            return currentYear - this.BirthYear;
+        var age = currentYear - this.BirthYear;
+        if (age < 0)
+        {
+            throw new Exception("Not born yet");
         }
-        public virtual string GetPrintString()
-        {
-            return @$"{this.Name}
-    {this.Address.Street} {this.Address.StreetNo}
-    {this.Address.City}";
+        return age;
         }
     }
