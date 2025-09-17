@@ -1,4 +1,8 @@
-function getCompanyName() {
-  return "SALT";
-}
+
+window.myFunctions = {
+  getCompanyName: function () {
+    return "SALT";
+  },
+};
+
 console.log("salt> Functions loaded");

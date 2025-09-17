@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Events in the DOM</title>
+
+    <script>
+      const early = document.querySelectorAll(".mainResult");
+      console.log("Early query length (should be 0):", early.length);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const late = document.querySelectorAll(".mainResult");
+        console.log("After DOMContentLoaded length:", late.length);
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1 class="mainResult">10</h1>
+      <h1 class="mainResult">-5</h1>
+      <h1 class="mainResult">Not a number</h1>
+    </main>
+
+    <script>
+      const els = document.querySelectorAll(".mainResult");
+      console.log("End of body length:", els.length);
+    </script>
+  </body>
+</html>

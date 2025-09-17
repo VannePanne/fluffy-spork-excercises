@@ -5,14 +5,19 @@
     <title>JavaScript DOM training ground</title>
 
     <script src="functions.js"></script>
+
+
     <script>
       console.log("salt> In the head.");
+    
     </script>
   </head>
 
   <body>
+   
     <script>
       console.log("salt> Start of body");
+     
       function addListInMain(numberOfListItems) {
         const ulElement = document.createElement("ul");
         for (let i = 0; i < numberOfListItems; i++) {
@@ -25,20 +30,21 @@
       }
 
       function removeDivById(id) {
+      
         const divToRemove = document.querySelector("div#" + id);
         if (divToRemove) {
           divToRemove.remove();
         }
       }
     </script>
+
     <main>
       <div name="content" class="big bold bright">Content 1</div>
       <div class="big bold" id="companyName">Content 2</div>
       <div name="content" class="big">Content 3</div>
     </main>
 
-    <script>
-    
+    <script> 
       const companyName = window.myFunctions.getCompanyName();
       document.getElementById("companyName").innerHTML = companyName;
 
@@ -49,13 +55,14 @@
       for (let i = 0; i < boldNodes.length; i++) {
         boldNodes[i].innerHTML += " ... and bold";
       }
+
       const boldNodesQuery = document.querySelectorAll(".bold");
       for (let i = 0; i < boldNodesQuery.length; i++) {
         boldNodesQuery[i].innerHTML += " (selected with query)";
       }
 
       addListInMain(5);
-
+;
 
       console.log("salt> End of body. Company name is " + companyName);
     </script>

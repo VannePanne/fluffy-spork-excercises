@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get Data with fetch()</title>
+
+    <style>
+      main {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .user img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
+    </style>
+
+    <script>
+      function createUserNameHeader(user) {
+        const h2 = document.createElement("h2");
+        h2.textContent = `${user.name.title} ${user.name.first} ${user.name.last}`;
+        h2.style.fontSize = "18px";
+        h2.style.margin = "0";
+        return h2;
+      }
+
+      function createUserImage(user) {
+        const img = document.createElement("img");
+        img.src = user.picture.thumbnail;
+        img.alt = `${user.name.first} ${user.name.last}`;
+        return img;
+      }
+
+      function createUserList(users) {
+        const wrap = document.createElement("div");
+        for (let i = 0; i < users.length; i++) {
+          const user = users[i];
+          const row = document.createElement("div");
+          row.className = "user";
+          row.appendChild(createUserImage(user));
+          row.appendChild(createUserNameHeader(user));
+          wrap.appendChild(row);
+        }
+        return wrap;
+      }
+
+      function getUsers(targetElement) {
+        // Bygg gärna om URL:en om du vill filtrera/ändra antal
+        const url = "https://randomuser.me/api/?gender=female&results=30";
+
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+            // Sätt antal i main först
+            targetElement.textContent = `Results: ${data.results.length}`;
+
+            // Lägg till listan
+            const list = createUserList(data.results);
+            targetElement.appendChild(list);
+          })
+          .catch((err) => {
+            targetElement.textContent = "Error loading users.";
+            console.error(err);
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const main = document.querySelector("main");
+        getUsers(main);
+      });
+    </script>
+  </head>
+  <body>
+    <main>Loading…</main>
+  </body>
+</html>
