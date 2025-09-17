@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript training ground</title>
+    <script src="functions.js"></script>
     <script>
-        console.log("salt> We are writing to the console");
+    console.log("salt> In the head.");
     </script>
-</head>
-<body>
-    <main>
-        <div></div>
-        <div></div>
-        <div></div>
-    </main>
-</body>
+  </head>
+  <body>
+    <script>
+        const name = getCompanyName();
+        console.log(`salt> End of body. Company name is ${name}`);
+    </script>
+    <main>...</main>
+    <script>
+      function getCompanyName() {
+    return "SALT";
+    }
+    console.log("salt> End of body");
+    </script>
+  </body>
 </html>
