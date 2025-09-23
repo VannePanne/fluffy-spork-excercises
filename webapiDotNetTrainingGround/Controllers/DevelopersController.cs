@@ -25,6 +25,17 @@ public class DevelopersController : ControllerBase
     {
         return _db;
     }
-    
 
+    [HttpGet("{id}/address/{addressId}/{street}")]
+    public Developer? WhateverMethodName(int id, int addressId, string street);
+
+    [HttpPost]
+    public IActionResult CreateNewDeveloper(Developer developerToAdd)
+    {
+        var nextId = _db.Count + 1;
+        developerToAdd.Id = nextId;
+        _db.Add(developerToAdd);
+
+        return CreatedAtAction(nameof(GetDeveloperById), new { id = nextId }, developerToAdd);
+    }
 }
