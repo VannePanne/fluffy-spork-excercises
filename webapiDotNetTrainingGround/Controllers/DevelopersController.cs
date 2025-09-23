@@ -37,4 +37,20 @@ public class DevelopersController : ControllerBase
 
         return CreatedAtAction(nameof(GetDeveloperById), new { id = nextId }, developerToAdd);
     }
+    [HttpPost]
+    public IActionResult CreateNewDeveloper(CreateDeveloperRequest request)
+    {
+        // map from request to model
+        var nextId = _db.Developers.Count + 1;
+        var newDev = new Developer()
+        {
+            Id = nextId,
+            Name = request.Name,
+            Email = request.Email,
+        };
+
+        _db.Developers.Add(newDev);
+
+        return CreatedAtAction(nameof(GetDeveloperById), new { id = nextId }, newDev);
+    }
 }
