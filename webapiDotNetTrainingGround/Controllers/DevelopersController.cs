@@ -13,4 +13,11 @@ public class DevelopersController : ControllerBase
     {
         _db = new List<Developer>();
     }
+
+    [HttpGet]
+    public List<Developer> GetAllDevs()
+    {
+        return _db;
+    }
+
 }
