@@ -14,10 +14,17 @@ public class DevelopersController : ControllerBase
         _db = new List<Developer>();
     }
 
+    [HttpGet("{Id}")]
+    public Developer? GetDeveloperById(int id)
+    {
+        return _db.Find(d => d.Id == id);
+    }
+
     [HttpGet]
-    public List<Developer> GetAllDevs()
+    public List<Developer> GetAllDevelopers()
     {
         return _db;
     }
+    
 
 }
