@@ -1,3 +1,5 @@
+using AdressBook.Models;
+
 namespace AdressBook.Models;
 
 public class Db
