@@ -18,5 +18,9 @@ public class AdressBookController : Controller
         var adress = _db.Adresses.Find(d => d.Id == id);
         return View(adress);
     }
+    public IActionResult Create()
+    {
+        return View();
+    }
 
 }

@@ -1,0 +1,11 @@
+@model Adress
+
+<h1>Add a new adress</h1>
+
+<form asp-controller="AdressBook" asp-action="Create" method="post">
+  @Html.DisplayNameFor(m => m.Name): <input asp-for="Name" /> <br />
+    @Html.DisplayNameFor(m => m.Street): <input asp-for="Street" /> <br />
+      @Html.DisplayNameFor(m => m.City): <input asp-for="City" /> <br />
+  @Html.DisplayNameFor(m => m.Email): <input asp-for="Email" /> <br />
+  <button type="submit">Create new adress</button>
+</form>
