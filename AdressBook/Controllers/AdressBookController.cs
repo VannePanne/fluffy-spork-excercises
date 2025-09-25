@@ -52,5 +52,10 @@ public class AdressBookController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-
+    public IActionResult Edit(int id)
+    {
+        var adress = _db.Adresses.Find(d => d.Id == id);
+    
+        return View(adress);
+    }
 }
