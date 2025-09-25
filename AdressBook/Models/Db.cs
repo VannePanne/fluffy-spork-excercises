@@ -6,8 +6,8 @@ public class Db
     {
         Adresses = new List<Adress>
         {
-            new Adress { Id = 1, Name = "Marcus",  Email = "marcus@salt.dev" },
-            new Adress { Id = 2, Name = "Vanessa", Email = "bea@salt.dev"    },
+            new Adress { Id = 1, Name = "Marcus", Street ="Hölöv", City = "Hölö", Email = "marcus@salt.dev" },
+            new Adress { Id = 2, Name = "Vanessa",Street ="Kyrkv", City = "Tumba", Email = "vanne@salt.dev" },
         };
     }
 
