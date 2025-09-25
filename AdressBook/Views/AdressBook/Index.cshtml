@@ -11,10 +11,23 @@
       <th>Email</th>
     </tr>
   </thead>
-  @foreach (var adress in Model)
+  @for (var i = 0; i < Model.Count; i++)
   {
-    <tr>
-      <td>@adress.Name</td>
+    var adress = Model[i];
+    var style = "";
+    if (i % 2 == 0) {
+        style = "background-color: darkseagreen;";
+    }
+    <tr style="@style">
+      <td>
+        <a 
+            asp-controller="AdressBook"
+            asp-action="Details"
+            asp-route-id="@adress.Id"
+        >
+            @adress.Name
+        </a>
+      </td>
       <td>@adress.Street</td>
       <td>@adress.City</td>
       <td>@adress.Email</td>
