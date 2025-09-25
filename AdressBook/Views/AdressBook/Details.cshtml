@@ -1,0 +1,11 @@
+@model Adress
+
+<h1>@Model.Name</h1>
+<ul>
+  <li>@Html.DisplayNameFor(m => m.Name) : @Model.Name</li>
+  <li>@Html.DisplayNameFor(m => m.Street) : @Model.Street</li>
+  <li>@Html.DisplayNameFor(m => m.City) : @Model.City</li>
+  <li>@Html.DisplayNameFor(m => m.Email) : @Model.Email</li>
+</ul>
+
+<a asp-controller="Adress" asp-action="Index">Back to list</a>
