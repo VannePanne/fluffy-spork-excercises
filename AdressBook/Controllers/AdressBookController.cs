@@ -43,10 +43,12 @@ public class AdressBookController : Controller
     [HttpPost]
     public IActionResult Delete(int id)
     {
-        var adress = _db.Adresses.Find(a => a.Id == id);
-        if (adress == null) return NotFound();
+        var adress = _db.Adresses.Find(d => d.Id == id);
+        if (adress != null)
+        {
+            _db.Adresses.Remove(adress);
+        }
 
-        _db.Adresses.Remove(adress);
         return RedirectToAction(nameof(Index));
     }
 
