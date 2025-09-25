@@ -58,4 +58,19 @@ public class AdressBookController : Controller
     
         return View(adress);
     }
+    [HttpPost]
+    public IActionResult Edit(Adress updatedAdress)
+    {
+        var adress = _db.Adresses.Find(d => d.Id == updatedAdress.Id);
+        if (adress == null) return NotFound();
+
+        // uppdatera fälten
+        adress.Name  = updatedAdress.Name;
+        adress.Street= updatedAdress.Street;
+        adress.City  = updatedAdress.City;
+        adress.Email = updatedAdress.Email;
+
+        // tillbaka till details för den uppdaterade posten (eller Index om du vill)
+        return RedirectToAction(nameof(Details), new { id = adress.Id });
+    }
 }

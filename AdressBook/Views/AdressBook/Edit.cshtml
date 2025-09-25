@@ -1,0 +1,26 @@
+@model Adress
+
+<h1>Edit address</h1>
+
+<form asp-controller="AdressBook" asp-action="Edit" method="post">
+  <input type="hidden" asp-for="Id" />
+
+  <label>@Html.DisplayNameFor(m => m.Name)</label>
+  <input asp-for="Name" />
+  <br />
+
+  <label>@Html.DisplayNameFor(m => m.Street)</label>
+  <input asp-for="Street" />
+  <br />
+
+  <label>@Html.DisplayNameFor(m => m.City)</label>
+  <input asp-for="City" />
+  <br />
+
+  <label>@Html.DisplayNameFor(m => m.Email)</label>
+  <input asp-for="Email" />
+  <br />
+
+  <button type="submit">Save</button>
+  <a asp-controller="AdressBook" asp-action="Details" asp-route-id="@Model.Id">Cancel</a>
+</form>
