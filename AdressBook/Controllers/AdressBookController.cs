@@ -40,5 +40,15 @@ public class AdressBookController : Controller
         return RedirectToAction(nameof(Index));
         // return RedirectToAction(nameof(Details), new { Id = nextId });
     }
+    [HttpPost]
+    public IActionResult Delete(int id)
+    {
+        var adress = _db.Adresses.Find(a => a.Id == id);
+        if (adress == null) return NotFound();
+
+        _db.Adresses.Remove(adress);
+        return RedirectToAction(nameof(Index));
+    }
+
 
 }
