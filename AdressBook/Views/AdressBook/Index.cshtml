@@ -1,0 +1,24 @@
+@model List<Adress>
+
+<h1>Showing @Model.Count adresses!</h1>
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  @foreach (var adress in Model)
+  {
+    <tr>
+      <td>@adress.Name</td>
+      <td>@adress.Street</td>
+      <td>@adress.City</td>
+      <td>@adress.Email</td>
+    </tr>
+  }
+</ul>
+</table>
