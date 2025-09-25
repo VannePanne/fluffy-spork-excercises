@@ -23,4 +23,22 @@ public class AdressBookController : Controller
         return View();
     }
 
+    [HttpPost]
+    public IActionResult Create(CreateNewAdressViewModel viewModel)
+    {
+        var nextId = _db.Adresses.Count + 1;
+        var adressToAdd = new Adress()
+        {
+            Id = nextId,
+            Name = viewModel.Name,
+            Street = viewModel.Street,
+            City = viewModel.City,
+            Email = viewModel.Email
+        };
+        _db.Adresses.Add(adressToAdd);
+
+        return RedirectToAction(nameof(Index));
+        // return RedirectToAction(nameof(Details), new { Id = nextId });
+    }
+
 }
