@@ -8,4 +8,8 @@
   <li>@Html.DisplayNameFor(m => m.Email) : @Model.Email</li>
 </ul>
 
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+  <button type="submit">Delete this adress</button>
+</form> 
+
 <a asp-controller="AdressBook" asp-action="Index">Back to list</a>
