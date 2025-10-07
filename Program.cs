@@ -8,7 +8,7 @@ static string DateToCourse(DateTime courseDate)
   int daysLeft = (courseDate - DateTime.Today).Days;
   return "Today it is " + daysLeft + "days left until the course starts.";
 }
-
+//test
 Console.Write("What is your name? ");
 var name = Console.ReadLine()!;
 
